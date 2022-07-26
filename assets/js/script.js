@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "select[name='task-type']"
     ).value;
     // vpackage up data as an object
+    if (!taskNameInput || !taskTypeInput) {
+      alert("Your need to fill out the task form!");
+      return false;
+    }
+    formEl.reset();
     var taskDataObj = { name: taskNameInput, type: taskTypeInput };
     // send it as an argument to createTaskEl
     createTaskEl(taskDataObj);
